@@ -29,5 +29,5 @@ module.exports = post(options, async (req, res) => {
   var blob = new Blob([jsonse], { type: 'application/json' })
   const cid = await client.storeBlob(blob)
   const forwardURL = toGatewayURL('ipfs://' + cid).href
-  return forwardURL
+  return { "ipfs_url": forwardURL }
 })
