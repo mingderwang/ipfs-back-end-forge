@@ -1,8 +1,8 @@
 {
   "name": "ipfs-back-end-forge",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Codegeist 2021 Forge App Project",
-  "author": "Muzamint",
+  "author": "Muzamint, Ming-der Wang<mingderwang@gmail.com",
   "license": "MIT",
   "main": "index.js",
   "repository": "mingderwang/ipfs-back-end-forge",

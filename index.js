@@ -1,4 +1,3 @@
-const fetch = require('node-fetch')
 const { buffer, text, json } = require('micro')
 const post = require('micro-post')
 const qs = require('querystring')
@@ -15,7 +14,7 @@ const options = {
 
 module.exports = post(options, async (req, res) => {
   console.log(
-    '\n 🔥 Usage: curl -X POST http://mars.muzamint.com:5001/ -d @data.json -H "Content-Type: application/json"\n'  )
+    '\n 🔥 Usage: curl -X POST https://ipfs-proxy-server.muzamint.com/ -d @data.json -H "Content-Type: application/json"\n'  )
   const buf = await buffer(req)
   console.log(buf)
   // <Buffer 7b 22 70 72 69 63 65 22 3a 20 39 2e 39 39 7d>
@@ -23,7 +22,7 @@ module.exports = post(options, async (req, res) => {
   console.log(txt)
 
   const js = await json(req)
-  console.log(js.superxerox)
+  console.log(js)
 
   const jsonse = txt
   var blob = new Blob([jsonse], { type: 'application/json' })
