@@ -13,7 +13,8 @@ const options = {
 
 module.exports = post(options, async (req, res) => {
   console.log(
-    '\n 🔥 Usage: curl -X POST https://ipfs-proxy-server.muzamint.com/ -d @data.json -H "Content-Type: application/json"\n'  )
+    '\n 🔥 Usage: curl -X POST https://ipfs-proxy-server.muzamint.com/ -d @data.json -H "Content-Type: application/json"\n',
+  )
   const buf = await buffer(req)
   console.log(buf)
   // <Buffer 7b 22 70 72 69 63 65 22 3a 20 39 2e 39 39 7d>
@@ -27,5 +28,5 @@ module.exports = post(options, async (req, res) => {
   var blob = new Blob([jsonse], { type: 'application/json' })
   const cid = await client.storeBlob(blob)
   const forwardURL = toGatewayURL('ipfs://' + cid).href
-  return { "ipfs_url": forwardURL }
+  return { ipfs_url: forwardURL }
 })
